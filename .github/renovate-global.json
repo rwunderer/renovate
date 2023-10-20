@@ -3,6 +3,7 @@
   "branchPrefix": "github-renovate/",
   "dependencyDashboardTitle": "Dependency Dashboard self-hosted",
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+
   "autodiscover": true,
   "autodiscoverNamespaces": [
     "rwunderer",
@@ -12,9 +13,16 @@
     "rwunderer/*",
     "caprisys/*"
   ],
+
   "onboarding": true,
   "onboardingBranch": "github-renovate/configure",
   "onboardingConfigFileName": ".github/renovate.json",
+  "onboardingConfig": {
+    "extends": [
+      "github>rwunderer/renovate"
+    ]
+  },
+
   "platform": "github",
   "repositories": []
 }
