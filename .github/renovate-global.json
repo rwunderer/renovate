@@ -4,7 +4,7 @@
   "dependencyDashboardTitle": "Dependency Dashboard self-hosted",
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "autodiscover": true,
-  "autodiscoverFilter": [
+  "autodiscoverNamespaces": [
     "rwunderer",
     "caprisys"
   ],
