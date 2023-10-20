@@ -23,6 +23,8 @@
     ]
   },
 
+  "enabledManagers": ["github-actions", "gomod", "dockerfile", "helmv3", "helm-values", "kubernetes", "regex"],
+
   "platform": "github",
   "assignees": ["rwunderer"],
   "repositories": []
