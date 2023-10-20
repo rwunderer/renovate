@@ -14,6 +14,7 @@
   ],
   "onboarding": true,
   "onboardingBranch": "github-renovate/configure",
+  "onboardingConfigFileName": ".github/renovate.json",
   "platform": "github",
   "repositories": []
 }
