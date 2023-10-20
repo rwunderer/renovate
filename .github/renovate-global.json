@@ -8,6 +8,10 @@
     "rwunderer",
     "caprisys"
   ],
+  "autodiscoverFilter": [
+    "rwunderer/*",
+    "caprisys/*"
+  ],
   "onboarding": true,
   "onboardingBranch": "github-renovate/configure",
   "platform": "github",
