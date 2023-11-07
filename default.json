@@ -11,6 +11,13 @@
   "dependencyDashboard": true,
   "prConcurrentLimit": 10,
 
+  "packageRules": [
+    {
+      "groupName": "github-actions",
+      "matchManagers": ["github-actions"]
+    }
+  ],
+
   "vulnerabilityAlerts": {
     "labels": ["security"]
   }
