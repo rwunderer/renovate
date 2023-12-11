@@ -1,11 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>rwunderer/renovate"],
+  "extends": [
+    "github>rwunderer/renovate"
+  ],
   "packageRules": [
     {
       "description": "Update the Renovate GitHub action weekly with fix type",
-      "packageNames": "renovatebot/github-action",
-      "extends": [":semanticCommitType(fix)", "schedule:weekly"]
+      "matchPackageNames": "renovatebot/github-action",
+      "extends": [
+        ":semanticCommitType(fix)",
+        "schedule:weekly"
+      ]
     }
   ]
 }
