@@ -1,0 +1,12 @@
+{
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "matchPackagePatterns": [
+        "alpine",
+        "gcr.io/distroless/*"
+      ],
+      "automerge": true
+    }
+  ]
+}
