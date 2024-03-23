@@ -1,0 +1,46 @@
+name: Auto-Tag
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+on:
+  workflow_call:
+    inputs:
+      regex-pattern:
+        required: true
+        type: string
+      tag-prefix:
+        required: false
+        type: string
+
+env:
+  # Use docker.io for Docker Hub if empty
+  REGISTRY: ghcr.io
+  # github.repository as <account>/<repo>
+  IMAGE_NAME: ${{ github.repository }}
+
+
+jobs:
+  update_tag:
+    if: >-
+      github.event.pull_request.merged == true &&
+      contains(github.event.pull_request.labels.*.name, 'renovate_publish')
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - uses: butlerlogic/action-autotag@7421fe0300091f3ef2134f627baaad42a156de10 # 1.1.4
+        env:
+          GITHUB_TOKEN: "${{ secrets.TAGGING_TOKEN }}"
+        with:
+          strategy: regex
+          root: "Dockerfile"
+          regex_pattern: "${{ inputs.regex-pattern }}"
+          tag_prefix: "${{ inputs.tag-prefix }}"
