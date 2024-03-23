@@ -16,6 +16,14 @@
       "groupName": "github-actions",
       "matchManagers": ["github-actions"],
       "automerge": true
+    },
+    {
+      "groupName": "github-actions",
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": [
+        "butlerlogic/action-autotag"
+      ],
+      "automerge": false
     }
   ],
 
