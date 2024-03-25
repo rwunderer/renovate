@@ -23,7 +23,7 @@
       "matchPackageNames": [
         "butlerlogic/action-autotag"
       ],
-      "automerge": false
+      "enabled": false
     }
   ],
 
