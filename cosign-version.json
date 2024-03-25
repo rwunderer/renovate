@@ -6,7 +6,7 @@
         "(^|/).github/workflows/.*\\.yml$"
       ],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>.*?) (?:registryUrl=(?<registryUrl>.+?))?depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\n.*cosign-release: ?'?(?<currentValue>[^']*)'?"
+        "# renovate: datasource=(?<datasource>.*?) (?:registryUrl=(?<registryUrl>.+?))?depName=(?<depName>[^\\s]*?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>.*?))?\n.*cosign-release: ?'?(?<currentValue>[^']*)'?"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
