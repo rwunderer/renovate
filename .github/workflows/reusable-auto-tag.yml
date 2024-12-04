@@ -14,6 +14,10 @@ on:
       tag-prefix:
         required: false
         type: string
+      docker-file:
+        required: false
+        default: "./Dockerfile"
+        type: string
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -41,6 +45,6 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.TAGGING_TOKEN }}"
         with:
           strategy: regex
-          root: "Dockerfile"
+          root: "${{ inputs.docker-file }}"
           regex_pattern: "${{ inputs.regex-pattern }}"
           tag_prefix: "${{ inputs.tag-prefix }}"
