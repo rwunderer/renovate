@@ -15,6 +15,10 @@ on:
       target:
         required: true
         type: string
+      platforms:
+        required: false
+        default: "linux/amd64,linux/arm64"
+        type: string
       docker-file:
         required: false
         default: "./Dockerfile"
@@ -87,7 +91,7 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          platforms: ${{ inputs.platforms }}
           target: ${{ inputs.target }}
           file: ${{ inputs.docker-file }}
           tags: ${{ steps.meta.outputs.tags }}
