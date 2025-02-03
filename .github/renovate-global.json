@@ -25,6 +25,13 @@
 
   "enabledManagers": ["github-actions", "gomod", "dockerfile", "helmv3", "helm-values", "kubernetes", "regex"],
 
+  "allowPostUpgradeCommandTemplating": true,
+  "allowedPostUpgradeCommands": [
+    "make (all|latest)",
+    "^sed.*Chart.yaml$",
+    "git status"
+  ],
+
   "platform": "github",
   "assignees": ["rwunderer"],
   "repositories": []
