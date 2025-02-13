@@ -1,0 +1,32 @@
+{
+  "packageRules": [
+    {
+      "matchManagers": [
+        "gomod"
+      ],
+      "groupName": "go-modules",
+      "automerge": true,
+      "automergeSchedule": ["* 0-5 * * *"],
+      "automergeType": "pr",
+      "addLabels": [
+        "renovate_publish"
+      ],
+      "postUpdateOptions": [
+        "gomodUpdateImportPaths",
+        "gomodTidy"
+      ]
+    },
+    {
+      "matchDepNames": [
+        "golang"
+      ],
+      "groupName": "go-modules",
+      "automerge": true,
+      "automergeSchedule": ["* 0-5 * * *"],
+      "automergeType": "pr",
+      "addLabels": [
+        "renovate_publish"
+      ]
+    }
+  ]
+}
