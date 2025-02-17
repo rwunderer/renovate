@@ -1,9 +1,14 @@
 {
   "packageRules": [
     {
+      "matchUpdateTypes": ["digest", "pin-digest"],
+      "automerge": true
+    },
+    {
       "matchManagers": [
         "gomod"
       ],
+      "matchUpdateTypes": ["major", "minor", "patch"],
       "groupName": "go-modules",
       "automerge": true,
       "automergeSchedule": ["* 0-5 * * *"],
@@ -20,6 +25,7 @@
       "matchDepNames": [
         "golang"
       ],
+      "matchUpdateTypes": ["major", "minor", "patch"],
       "groupName": "go-modules",
       "automerge": true,
       "automergeSchedule": ["* 0-5 * * *"],
