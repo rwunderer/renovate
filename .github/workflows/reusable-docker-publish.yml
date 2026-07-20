@@ -96,8 +96,8 @@ jobs:
           file: ${{ inputs.docker-file }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          cache-to: type=inline
           outputs: type=image,name=target,annotation-index.org.opencontainers.image.description=${{ inputs.docker-description }},org.opencontainers.image.licenses=MIT
 
       # Sign the resulting Docker image digest except on PRs.
